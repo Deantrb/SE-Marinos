@@ -218,6 +218,8 @@ public class Haciatras extends javax.swing.JPanel {
         if (!redundance()) {
             Object[] user = {jComboBox1.getSelectedItem().toString()};
             model.addRow(user);
+        }else{
+            JOptionPane.showMessageDialog(null, "Caracteristica repetida");
         }
     }//GEN-LAST:event_agragarCActionPerformed
 
@@ -312,7 +314,7 @@ public class Haciatras extends javax.swing.JPanel {
 
     public boolean redundance() {
         for (int i = 0; i < tblC.getRowCount(); i++) {
-            if (jComboBox1.getSelectedItem().toString().equals(tblC.getValueAt(i, 1))) {
+            if (jComboBox1.getSelectedItem().equals(tblC.getValueAt(i, 0))) {
                 return true;
             }
         }
